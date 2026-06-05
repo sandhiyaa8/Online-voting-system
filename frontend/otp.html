@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify OTP - Tamil Nadu Voting System</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <style>
+        .otp-container {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .otp-input-group {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin: 24px 0;
+        }
+
+        .otp-input {
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            text-align: center;
+            border: 2px solid #dadce0;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .otp-input:focus {
+            outline: none;
+            border-color: #1f73e6;
+            box-shadow: 0 0 0 3px rgba(31, 115, 230, 0.1);
+        }
+
+        .otp-input.filled {
+            border-color: #1f73e6;
+        }
+
+        .resend-section {
+            text-align: center;
+            margin-top: 24px;
+        }
+
+        .resend-link {
+            color: #1f73e6;
+            text-decoration: none;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .resend-link:hover {
+            text-decoration: underline;
+        }
+
+        .resend-link.disabled {
+            color: #dadce0;
+            cursor: not-allowed;
+        }
+
+        .timer {
+            font-size: 14px;
+            color: #5f6368;
+            margin-top: 8px;
+        }
+
+        .alert {
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+
+        .alert-info {
+            background-color: #e8f0fe;
+            color: #1f2937;
+            border: 1px solid #1f73e6;
+        }
+
+        .alert-error {
+            background-color: #fee;
+            color: #c33;
+            border: 1px solid #fcc;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 style="font-size: 28px; font-weight: 400; text-align: center; margin: 0 0 8px 0; color: var(--text-primary);">Verify OTP</h1>
+    <p class="text-center text-muted" style="margin-bottom: 32px;">Tamil Nadu Online Voting System</p>
+
+    <div class="otp-container">
+        <div id="otpMessage" class="alert alert-info"></div>
+
+        <form id="otpForm">
+            <p style="text-align: center; color: #5f6368; margin-bottom: 16px;">Enter the 6-digit OTP sent to your mobile</p>
+            
+            <div class="otp-input-group">
+                <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" inputmode="numeric" aria-label="OTP digit 1">
+                <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" inputmode="numeric" aria-label="OTP digit 2">
+                <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" inputmode="numeric" aria-label="OTP digit 3">
+                <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" inputmode="numeric" aria-label="OTP digit 4">
+                <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" inputmode="numeric" aria-label="OTP digit 5">
+                <input type="text" class="otp-input" maxlength="1" pattern="[0-9]" inputmode="numeric" aria-label="OTP digit 6">
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="verifyBtn" style="width: 100%;">Verify OTP</button>
+        </form>
+
+        <div class="resend-section">
+            <p style="font-size: 14px; color: #5f6368; margin: 16px 0;">Didn't receive the OTP?</p>
+            <a id="resendBtn" class="resend-link">Resend OTP</a>
+            <div id="timerDisplay" class="timer"></div>
+        </div>
+
+        <div style="text-align: center; margin-top: 24px;">
+            <a href="login.html" style="color: #1f73e6; text-decoration: none; font-size: 14px;">Back to Login</a>
+        </div>
+    </div>
+</div>
+
+<footer style="text-align: center; padding: 24px; color: var(--text-secondary); font-size: 12px;">
+    <a href="index.html" style="margin: 0 8px;">Home</a>
+    <p style="margin-top: 8px; color: #80868b;">Built by Sandhiya, Sindhiya & Pranesh</p>
+</footer>
+
+</body>
+</html>

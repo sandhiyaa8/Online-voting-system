@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote - Tamil Nadu Voting System</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body onload="loadCandidates()">
+
+<header style="background: white; border-bottom: 1px solid var(--border-color); padding: 16px 24px;">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
+        <div>
+            <span style="font-size: 20px; font-weight: 500; color: var(--text-primary);">Tamil Nadu Voting</span>
+        </div>
+        <div style="display: flex; gap: 8px;">
+            <button onclick="window.location.href='home.html'" class="btn btn-text">Dashboard</button>
+            <button onclick="window.location.href='results.html'" class="btn btn-text">Results</button>
+            <button onclick="logout()" class="btn btn-text">Sign out</button>
+        </div>
+    </div>
+</header>
+
+<div style="max-width: 1000px; margin: 32px auto; padding: 0 24px;">
+    <h1 style="font-size: 28px; font-weight: 400; margin: 0 0 8px 0; color: var(--text-primary);">Cast your vote</h1>
+    <p style="color: var(--text-secondary); margin: 0 0 32px 0;">Select your preferred candidate for the assembly election</p>
+
+    <div id="votingStatus"></div>
+
+    <div id="candidateList">
+        <div style="text-align: center; padding: 64px 24px;">
+            <div style="color: var(--text-secondary); margin-bottom: 16px;">Loading candidates...</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - Online Voting System</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body style="background: var(--google-grey-50);">
+
+<div class="container" style="max-width: 540px;">
+    <h1 style="font-size: 28px; font-weight: 400; text-align: center; margin: 0 0 8px 0; color: var(--text-primary);">Create account</h1>
+    <p class="text-center text-muted mb-3">Online Voting System</p>
+
+    <form id="regForm">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div style="grid-column: span 2;">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div>
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob" onchange="calculateAge()" required>
+            </div>
+
+            <div>
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" readonly>
+            </div>
+        </div>
+
+        <label for="mobile">Mobile Number</label>
+        <input type="tel" id="mobile" name="mobile" required pattern="[0-9]{10}">
+
+        <label for="address">Address</label>
+        <input type="text" id="address" name="address" required>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px;">
+            <div>
+                <label for="state">State</label>
+                <select id="state" name="state" onchange="loadTaluks()" required>
+                    <option value="">Select State</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                </select>
+            </div>
+            <div>
+                <label for="taluk">Taluk</label>
+                <select id="taluk" name="taluk" required>
+                    <option value="">Select Taluk</option>
+                </select>
+            </div>
+        </div>
+
+        <input type="hidden" id="country" name="country" value="India">
+
+        <hr style="border: none; border-top: 1px solid var(--border-color); margin: 24px 0;">
+
+        <label for="photo">Photo Upload</label>
+        <input type="file" id="photo" name="photo" accept="image/*" onchange="enableRegisterIfValid()">
+
+        <label for="adhar">Aadhaar Card</label>
+        <input type="file" id="adhar" name="adhar" accept="image/*,.pdf" onchange="enableRegisterIfValid()">
+
+        <label for="voterid">Voter ID Card</label>
+        <input type="file" id="voterid" name="voterid" accept="image/*,.pdf" onchange="enableRegisterIfValid()">
+
+        <hr style="border: none; border-top: 1px solid var(--border-color); margin: 24px 0;">
+
+        <label for="username">Choose a username</label>
+        <input type="text" id="username" name="username" required autocomplete="username">
+
+        <label for="password">Create a password</label>
+        <input type="password" id="password" name="password" required autocomplete="new-password" minlength="6">
+
+        <button type="submit" id="regBtn" class="btn btn-primary disabled" disabled style="margin-top: 24px;">
+            Create Account
+        </button>
+    </form>
+
+    <div class="text-center mt-3">
+        <a href="login.html">Sign in instead</a>
+    </div>
+</div>
+
+<footer style="text-align: center; padding: 24px; color: var(--text-secondary); font-size: 12px; background: var(--google-grey-50);">
+    <a href="index.html" style="margin: 0 8px;">Home</a>
+    <p style="margin-top: 8px; color: #80868b;">Built by Sandhiya, Sindhiya & Pranesh</p>
+</footer>
+
+</body>
+</html>
